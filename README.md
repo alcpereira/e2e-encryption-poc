@@ -1,34 +1,30 @@
-# Welcome to Remix + Vite!
+# E2E Encryption POC
 
-📖 See the [Remix docs](https://remix.run/docs) and the [Remix Vite docs](https://remix.run/docs/en/main/future/vite) for details on supported features.
+## How to run
 
-## Development
-
-Run the Express server with Vite dev middleware:
-
-```shellscript
+```
+npm install
 npm run dev
 ```
 
-## Deployment
+It should open on [http://localhost:3000](http://localhost:3000)
 
-First, build your app for production:
+## With server
 
-```sh
-npm run build
-```
+A simple JSON database stores the tweets encrypted on the client. For now only a single tweet can be shared (no threads yet 😢), as I misread the requirements and pivoted to client-only solution below.
 
-Then run the app in production mode:
+## With client only
 
-```sh
-npm start
-```
+The data is encrypted and lives in the URI. I used [lz-string] to compress it.
 
-Now you'll need to pick a host to deploy it to.
+## Key learnings
+- E2E Encryption isn't that complicated using Web Crypto API
+- [Remix](https://www.remix.run/) is cool
+- I need to learn more about Array Buffers
+- I really need to work on my `await` syntax skills to avoid callback hells, for example in `useEffect`
 
-### DIY
-
-If you're familiar with deploying Express applications you should be right at home. Just make sure to deploy the output of `npm run build`
-
-- `build/server`
-- `build/client`
+## To go further
+- Implement Tweet responses on Server POC
+- A bit of styling
+- Resolve the issue with parsing (some `"` are added 🤔)
+- More features (username for example)
