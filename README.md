@@ -15,7 +15,7 @@ A simple JSON database stores the tweets encrypted on the client. For now only a
 
 ## With client only
 
-The data is encrypted and lives in the URI. I used [lz-string] to compress it.
+The data is encrypted and lives in the URI. I used [lz-string](https://github.com/pieroxy/lz-string/) to compress it.
 
 ## Key learnings
 - E2E Encryption isn't that complicated using Web Crypto API
